@@ -130,6 +130,7 @@ with lib.hm.gvariant;
       dynamic-workspaces = false;
       # edge-tiling = false;
       workspaces-only-on-primary = true;
+      overlay-key = "";
     };
   
     # "org/gnome/mutter/keybindings" = {
