@@ -24,7 +24,7 @@ with lib.hm.gvariant;
     };
   
     "org/gnome/desktop/a11y/keyboard" = {
-      stickykeys-enable = true;
+      stickykeys-enable = false;
     };
   
   
