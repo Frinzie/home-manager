@@ -4,6 +4,7 @@
   imports = [
     ./modules/dconf/main.nix
     ./modules/dconf/extensions.nix
+    ./dot/kanata/default.nix
   ];
   
   # Home Manager needs a bit of information about you and the
