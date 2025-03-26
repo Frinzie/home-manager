@@ -31,23 +31,6 @@
   (template-expand sticky-mod 1000 lmet meta meta)
   (template-expand sticky-mod 1000 lalt alt alt)
   (template-expand sticky-mod 1000 ralt altgr altgr)
-
-  ;;one-shot-shift (one-shot-press 1000 lsft)
-  ;;latch-shift (on-press press-virtualkey shift)
-  ;;unlatch-shift (on-press release-virtualkey shift)
-
-  ;;shift 
-  ;;  (switch
-  ;;    ;; if shift is latched: unlatch it, then break
-  ;;    ((input virtual shift)) @unlatch-shift break
-  ;;    
-  ;;    () (tap-dance-eager 1000 (@one-shot-shift @latch-shift)) break
-  ;;  )
-
-  ;;control (one-shot-press 1000 lctl)
-  ;;meta (one-shot-press 1000 lmet)
-  ;;alt (one-shot-press 1000 lalt)
-  ;;altgr (one-shot-press 1000 ralt)
 )
 
 (defvirtualkeys
