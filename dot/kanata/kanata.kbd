@@ -1,0 +1,59 @@
+(deftemplate sticky-mod (timeout key alias virtkey)
+  (concat "one-shot-" $alias) (one-shot-press $timeout $key)
+  (concat "latch-" $alias) (on-press press-virtualkey $virtkey)
+  (concat "unlatch-" $alias) (on-press release-virtualkey $virtkey)
+
+  $alias
+    (switch
+      ;; if latched: unlatch and break
+      ((input virtual $virtkey)) (concat "@unlatch-" $alias) break
+
+      () ;; else 
+         (tap-dance-eager 
+           $timeout
+           ((concat "@one-shot-" $alias)
+           (concat "@latch-" $alias))
+         ) 
+         break
+    )
+)
+
+(defsrc lsft rsft lctl rctl lmet lalt ralt)
+(deflayer base
+  @shift @shift @control @control @meta @alt @altgr
+)
+
+(defcfg process-unmapped-keys yes)
+
+(defalias
+  (template-expand sticky-mod 1000 lsft shift shift)
+  (template-expand sticky-mod 1000 lctl control control) 
+  (template-expand sticky-mod 1000 lmet meta meta)
+  (template-expand sticky-mod 1000 lalt alt alt)
+  (template-expand sticky-mod 1000 ralt altgr altgr)
+
+  ;;one-shot-shift (one-shot-press 1000 lsft)
+  ;;latch-shift (on-press press-virtualkey shift)
+  ;;unlatch-shift (on-press release-virtualkey shift)
+
+  ;;shift 
+  ;;  (switch
+  ;;    ;; if shift is latched: unlatch it, then break
+  ;;    ((input virtual shift)) @unlatch-shift break
+  ;;    
+  ;;    () (tap-dance-eager 1000 (@one-shot-shift @latch-shift)) break
+  ;;  )
+
+  ;;control (one-shot-press 1000 lctl)
+  ;;meta (one-shot-press 1000 lmet)
+  ;;alt (one-shot-press 1000 lalt)
+  ;;altgr (one-shot-press 1000 ralt)
+)
+
+(defvirtualkeys
+  shift lsft
+  control lctl
+  meta lmet
+  alt lalt
+  altgr ralt
+)
