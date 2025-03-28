@@ -107,6 +107,7 @@ with lib.hm.gvariant;
       switch-to-workspace-4 = [ "<Super>q" ];
       switch-to-workspace-5 = [ "<Super>w" ];
       switch-to-workspace-6 = [ "<Super>f" ];
+      toggle-fullscreen = ["<Shift><Control>f"];
     };
   
     "org/gnome/desktop/wm/preferences" = {
