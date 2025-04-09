@@ -199,6 +199,12 @@ with lib.hm.gvariant;
       # switch-to-application-6 = [];
       # toggle-message-tray = [ "<Super>v" "<Super>m" ];
       toggle-overview = [ "<Super>x" ];
+      open-new-window-application-1 = ["<Super><Alt>1"]; 
+      open-new-window-application-2 = ["<Super><Alt>2"];
+      open-new-window-application-3 = ["<Super><Alt>3"];
+      open-new-window-application-4 = ["<Super><Alt>4"];
+      open-new-window-application-5 = ["<Super><Alt>5"];
+      open-new-window-application-6 = ["<Super><Alt>6"];
     };
   
     # "org/gnome/shell/world-clocks" = {
