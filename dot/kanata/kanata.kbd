@@ -26,17 +26,22 @@
 (defcfg process-unmapped-keys yes)
 
 (defalias
-  (template-expand sticky-mod 1000 lsft shift shift)
-  (template-expand sticky-mod 1000 lctl control control) 
-  (template-expand sticky-mod 1000 lmet meta meta)
-  (template-expand sticky-mod 1000 lalt alt alt)
-  (template-expand sticky-mod 1000 ralt altgr altgr)
+ ;; (template-expand sticky-mod 1000 lsft shift shift)
+ ;; (template-expand sticky-mod 1000 lctl control control) 
+ ;; (template-expand sticky-mod 1000 lmet meta meta)
+ ;; (template-expand sticky-mod 1000 lalt alt alt)
+ ;; (template-expand sticky-mod 1000 ralt altgr altgr)
+  shift (one-shot-press 1000 lsft)
+  control (one-shot-press 1000 lctl)
+  meta (one-shot-press 1000 lmet)
+  alt (one-shot-press 1000 lalt)
+  altgr (one-shot-press 1000 ralt)
 )
 
-(defvirtualkeys
-  shift lsft
-  control lctl
-  meta lmet
-  alt lalt
-  altgr ralt
-)
+;; (defvirtualkeys
+;;   shift lsft
+;;   control lctl
+;;   meta lmet
+;;   alt lalt
+;;   altgr ralt
+;; )
